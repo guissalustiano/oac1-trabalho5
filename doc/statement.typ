@@ -15,13 +15,13 @@ Nessa atividade iremos implementar e analisar o cache para um banco de dados cha
 
 O banco de dados é o mais simples possível com apenas duas funções:
 ```c
-// database.h
-
 db_data_t get(db_key_t key);
 void put(db_key_t key, db_data_t data);
 ```
 O `put` salva o valor `data` em um arquivo com o nome `key` e o `get` lê o arquivo com o nome `key` e retorna o valor salvo. 
 Isso é propositalmente lento.
+
+Sendo a chave um número inteiro sem sinal de 64 bits e o valor uma struct de 32 bytes definidos em `database_t.h`.
 
 == Tarefa
 Você deve implementar um cache associativo com o número de conjuntos configurável pela variável `ASSOCIATIVITY` no arquivo `database.h`.
