@@ -24,7 +24,7 @@ reset:
 
 #$ make -s run_brenchmark | tee output.txt
 run_brenchmark:
-	for i in 1 2 4 8 16 32 64 128 256 512 1024 2048 4096; do \
+	for i in 1 2 4 8 16 32 64 128 256 512 1024; do \
 		sed -i "s/#define ASSOCIATIVITY.*/#define ASSOCIATIVITY $$i/" database.h; \
 		make run; \
 	done

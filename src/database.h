@@ -11,7 +11,7 @@ typedef struct {
     db_data_t data;
 } cache_entry_t;
 
-#define CACHE_SIZE sizeof(cache_entry_t) * 4096
+#define CACHE_SIZE sizeof(cache_entry_t) * 1024
 
 /* Fig 5.15
  * 1 -> One way
