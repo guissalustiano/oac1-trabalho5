@@ -10,7 +10,7 @@
 #show link: underline
 
 == Contexto
-Cache é um conceito universal da computação, usado em diversas contextos para melhorar o desempenho de programs.
+Cache é um conceito universal da computação usado em diversas contextos para melhorar o desempenho de programas.
 Nessa atividade iremos implementar e analisar o cache para um banco de dados chave valor inspirado no cache estudado do RISC-V.
 
 O banco de dados é o mais simples possível com apenas duas funções:
@@ -25,10 +25,10 @@ Sendo a chave um número inteiro sem sinal de 64 bits e o valor uma struct de 32
 
 == Tarefa
 Você deve implementar um cache associativo com o número de conjuntos configurável pela variável `ASSOCIATIVITY` no arquivo `database.h`.
-Você deve usar a variável `static cache_entry_t cache[CACHE_SIZE];` para armazenar o cache, não é permitido usar outras variáveis globais.
-Em caso de hit você deve também incrementar o valor de cache_hits;
+Você deve usar a variável `static cache_entry_t cache[CACHE_SIZE];` para armazenar o cache, não sendo permitido usar outras variáveis globais.
+Em caso de hit você deve também incrementar o valor de cache_hits.
 
-Você pode baixar o código base #link("https://github.com/guissalustiano/oac1-trabalho3/tree/main/float_lib")[no repositorio do experimento], disponivel da pasta `src`.
+Você pode baixar o código base #link("https://github.com/guissalustiano/oac1-trabalho3/tree/main/float_lib")[no repositório do experimento], disponivel da pasta `src`.
 Um makefile também foi fornecido para facilitar a compilação e execução do programa, para executar basta rodar `make run`.
 
 Após terminar a implementação, você deve rodar o programa para diferentes valores de `ASSOCIATIVITY` e gerar um arquivo `brenchmark.txt` com os resultados.
@@ -37,7 +37,7 @@ Para fazer isso basta executar o comando abaixo:
 make -s run_brenchmark
 ```
 
-Atenção, isso altera o valor de `ASSOCIATIVITY` no arquivo `database.h`, para voltar ao valor padrão você pode rodar `make reset`.
+Atenção: isso altera o valor de `ASSOCIATIVITY` no arquivo `database.h`! Para voltar ao valor padrão você pode rodar `make reset`.
 
 = Entrega final
 Ao final, gere um zip `atv5.zip` com os arquivos.
