@@ -28,7 +28,7 @@ Você deve implementar um cache associativo com o número de conjuntos configur�
 Você deve usar a variável `static cache_entry_t cache[CACHE_SIZE];` para armazenar o cache, não sendo permitido usar outras variáveis globais.
 Em caso de hit você deve também incrementar o valor de cache_hits.
 
-Você pode baixar o código base #link("https://github.com/guissalustiano/oac1-trabalho3/tree/main/float_lib")[no repositório do experimento], disponivel da pasta `src`.
+Você pode baixar o código base #link("https://github.com/guissalustiano/oac1-trabalho5/tree/main/src")[no repositório do experimento], disponivel da pasta `src`.
 Um makefile também foi fornecido para facilitar a compilação e execução do programa, para executar basta rodar `make run`.
 
 Após terminar a implementação, você deve rodar o programa para diferentes valores de `ASSOCIATIVITY` e gerar um arquivo `brenchmark.txt` com os resultados.
