@@ -23,7 +23,7 @@ reset:
 	sed -i "s/#define ASSOCIATIVITY.*/#define ASSOCIATIVITY 2/" database.h; \
 
 #$ make -s run_brenchmark | tee output.txt
-run_brenchmark:
+run_all:
 	for i in 1 2 4 8 16 32 64 128 256 512 1024; do \
 		sed -i "s/#define ASSOCIATIVITY.*/#define ASSOCIATIVITY $$i/" database.h; \
 		make run; \

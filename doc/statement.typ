@@ -31,20 +31,21 @@ Em caso de hit você deve também incrementar o valor de cache_hits.
 Você pode baixar o código base #link("https://github.com/guissalustiano/oac1-trabalho5/tree/main/src")[no repositório do experimento], disponivel da pasta `src`.
 Um makefile também foi fornecido para facilitar a compilação e execução do programa, para executar basta rodar `make run`.
 
-Após terminar a implementação, você deve rodar o programa para diferentes valores de `ASSOCIATIVITY` e gerar um arquivo `brenchmark.txt` com os resultados.
-Para fazer isso basta executar o comando abaixo:
+Para rodar os testes com diferentes configurações você pode executar seguinte comando:
 ```bash
 make -s run_brenchmark
 ```
 
 Atenção: isso altera o valor de `ASSOCIATIVITY` no arquivo `database.h`! Para voltar ao valor padrão você pode rodar `make reset`.
 
+Você pode encontrar testes que mostram o comportamento esperado do cache no arquivo `main.c`.
+No caso de caches associativos, a "linha" mais antiga utilizada deve ser substituída.
+
 = Entrega final
 Ao final, gere um zip `atv5.zip` com os arquivos.
 ```bash
 atvr5.zip
 ├── database.c
-├── brenchmark.txt
 ```
 
 // #bibliography("references.bib")

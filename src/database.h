@@ -1,5 +1,7 @@
+#include <stdbool.h>
 #include "database_t.h"
 #include "database_file.h"
+#include "time.h"
 
 #ifndef DATABASE_H
 #define DATABASE_H
@@ -7,11 +9,13 @@
 typedef uint16_t db_tag_t;
 
 typedef struct {
+    bool valid;
+    time_t last_access;
     db_tag_t tag;
     db_data_t data;
 } cache_entry_t;
 
-#define CACHE_SIZE sizeof(cache_entry_t) * 1024
+#define CACHE_SIZE 1024
 
 /* Fig 5.15
  * 1 -> One way
@@ -19,11 +23,17 @@ typedef struct {
  * 4 -> Four way
  * 8 -> Eight way
  */
-#define ASSOCIATIVITY 2
+#define ASSOCIATIVITY 1
 
 static cache_entry_t cache[CACHE_SIZE];
 static uint32_t cache_hits;
 static uint32_t cache_misses;
+
+/*
+ * Inicializa o banco de dados
+ * Chamado uma unica vez no inicio do programa
+ */
+void init();
 
 /*
  * Le dado do banco a partir da chave
@@ -37,5 +47,7 @@ db_data_t get(db_key_t key);
  */
 void put(db_key_t key, db_data_t data);
 
+uint32_t get_cache_hits();
+uint32_t get_cache_misses();
 void print_cache_stats();
 #endif
