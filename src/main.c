@@ -73,6 +73,24 @@ void test_2() {
     ASSERT(get_cache_misses() == 1);
 }
 
+// p/ ASSOCIATIVITY = 1024 (max)
+void test_1024() {
+    for (int i = 0; i < CACHE_SIZE; i++) {
+        pd(i, i);
+    }
+
+    for (int i = 0; i < CACHE_SIZE; i++) {
+        ASSERT(get(i).a == i);
+    }
+    ASSERT(get_cache_hits() == 1024);
+    ASSERT(get_cache_misses() == 0);
+
+    pd(CACHE_SIZE, 1024); // replace the 0, the oldest cache entry
+    ASSERT(get(0).a == 0);
+    ASSERT(get_cache_hits() == 1024);
+    ASSERT(get_cache_misses() == 1);
+}
+
 int main() {
     init();
 
@@ -83,6 +101,10 @@ int main() {
         }
         case 2: {
             test_2();
+            break;
+        }
+        case 1024: {
+            test_1024();
             break;
         }
     }
