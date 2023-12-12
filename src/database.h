@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include "database_t.h"
 #include "database_file.h"
-#include "time.h"
+#include <time.h>
 
 #ifndef DATABASE_H
 #define DATABASE_H
@@ -10,7 +10,8 @@ typedef uint16_t db_tag_t;
 
 typedef struct {
     bool valid;
-    time_t last_access;
+    // prefira a funcao clock() para obter um instante de tempo, pelo programa rodar muito rapido o time() pode retornar o mesmo valor em chamadas consecutivas
+    long last_access;
     db_tag_t tag;
     db_data_t data;
 } cache_entry_t;
