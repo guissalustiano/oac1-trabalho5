@@ -80,7 +80,7 @@ void test_1024() {
     }
 
     for (int i = 0; i < CACHE_SIZE; i++) {
-        ASSERT(get(i).a == i);
+        ASSERT(get(i).a == (uint64_t) i);
     }
     ASSERT(get_cache_hits() == 1024);
     ASSERT(get_cache_misses() == 0);
