@@ -6,7 +6,7 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
-typedef uint16_t db_tag_t;
+typedef uint32_t db_tag_t;
 
 typedef struct {
     bool valid;
