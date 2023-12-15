@@ -33,7 +33,7 @@ Um makefile também foi fornecido para facilitar a compilação e execução do 
 
 Para rodar os testes com diferentes configurações você pode executar seguinte comando:
 ```bash
-make -s run_brenchmark
+make -s run_all
 ```
 
 Atenção: isso altera o valor de `ASSOCIATIVITY` no arquivo `database.h`! Para voltar ao valor padrão você pode rodar `make reset`.
